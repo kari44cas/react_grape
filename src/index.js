@@ -53,7 +53,7 @@ class App extends React.Component {
 
       Promise.all([modelPromise, webCamPromise])
         .then(values => {
-          this.detectFrame(this.videoRef.current, values[0]);
+          //this.detectFrame(this.videoRef.current, values[0]);
         })
         .catch(error => {
           console.error(error);
@@ -61,7 +61,7 @@ class App extends React.Component {
     }
   }
 
-    detectFrame = (video, model) => {
+    /*detectFrame = (video, model) => {
         tf.engine().startScope();
         model.executeAsync(this.process_input(video)).then(predictions => {
         this.renderPredictions(predictions, video);
@@ -72,7 +72,7 @@ class App extends React.Component {
         });
         tf.engine().endScope();
       });
-  };
+  };*/
 
   process_input(video_frame){
     const tfimg = tf.browser.fromPixels(video_frame).toInt();
